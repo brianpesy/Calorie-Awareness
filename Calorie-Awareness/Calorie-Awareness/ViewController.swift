@@ -131,23 +131,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
          }
          
          */
-        
-        //After a press of the "more info" button (custom button maybe? "..." icon), go to a new view controller that shows the different stats of the food item. Make sure you can back out after. (That's the whole app probs?) If I can't do this part, just have a label that appears somewhere on the screen
-        // We display the "more info" after the button was pressed at least one time. 
-        //Nav bar on top, shows everything. Back up after! Now... to research on that...
-        
-        /*
-         Option 1: Create a custom button and then display the data in a navigation bar (will need to pass variables through a segue)
-         Option 2: Create a slide out menu where we can see the data from without leaving
-         Option 3:
-         Last resort: Just display calories only as a label right on top of the name of the food (convenient though!)
-         */
-        
-//
-//        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let newViewController = storyBoard.instantiateViewController(withIdentifier: "newViewController")
-//        self.present(newViewController, animated: true, completion: nil)
-        
+
     }
     
     func apiAuth(food: String){
