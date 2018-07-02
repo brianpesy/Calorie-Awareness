@@ -29,8 +29,20 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         return label
     }()
     
+    //Calorie label
+    let calorieLabel: UILabel = {
+        let calorieLabel = UILabel()
+        calorieLabel.textColor = .white
+        calorieLabel.translatesAutoresizingMaskIntoConstraints = false
+        calorieLabel.text = " "
+        calorieLabel.font = calorieLabel.font.withSize(20)
+        return calorieLabel
+    }()
+    
     let apiButton: UIButton = UIButton()
     var food = ""
+    var calories = 0
+    var weight = 0
 
     
     //1. Creating a button. We can use this button to get the API whenever the user wants. It will be good to regulate the checks this way! PROBLEM: Finding a good API for nutrition :(
@@ -171,16 +183,39 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             "x-remote-user-id": "1"
             ]
         
+        SVProgressHUD.show()
         
         Alamofire.request("https://trackapi.nutritionix.com/v2/natural/nutrients", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-            print(response) //Response is correctly in there! We can now parse this.
+//            print(response) //Response is correctly in there! We can now parse this.
             
             //JSON parsing here
             
+            if((response.result.value) != nil) {
+                let json = JSON(response.result.value!)
+                if json["message"].stringValue != "We couldn't match any of your foods" {
+                    for item in json["foods"].arrayValue {
+                        //Got the calories fine! It's in this variable. If we want any other values, we can do refer to the variables and structure here as well.
+                        self.calories = item["nf_calories"].intValue
+                        self.weight = item["serving_weight_grams"].intValue
+                        print(self.calories)
+                        self.displayCalories(calories: self.calories, weight: self.weight, food: self.food)
+                    }
+                }
+            }
             
+            //Progress bar end here
+            SVProgressHUD.dismiss()
         }
-        
-        
+    }
+    
+    func displayCalories(calories: Int, weight: Int, food: String){
+//        let calLabel = UILabel(frame: CGRect(x: 10, y: 50, width: 230, height: 21))
+//        calLabel.textAlignment = .center //For center alignment
+        calorieLabel.text = "\(food): \(calories)kcal per \(weight)g"
+//        calLabel.textColor = .white
+        view.addSubview(calorieLabel)
+        setupCalorieLabel()
+
     }
     
     override func viewDidLoad() {
@@ -192,6 +227,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         createButton()
         view.addSubview(apiButton)
         setupLabel()
+//        view.addSubview(calorieLabel)
+//        setupCalorieLabel()
     }
 
     override func didReceiveMemoryWarning() {
@@ -269,6 +306,11 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         label.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80).isActive = true
         
         
+    }
+    
+    func setupCalorieLabel(){
+        calorieLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        calorieLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive = true
     }
 
 }
