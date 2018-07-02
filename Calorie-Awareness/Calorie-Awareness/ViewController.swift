@@ -14,6 +14,7 @@ import Vision
 import CoreML
 import Alamofire
 import SwiftyJSON
+import SVProgressHUD
 
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
@@ -64,12 +65,67 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     }
     
     @objc private func getAction(_ sender: UIButton?) {
-        print("helo")
+//        print("helo")
         apiButton.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         //Place API get call over here. Problem: not being able to know what is a good API for nutrition :(
         
         //The variable "food" has the food that we want to work on here!
-        print(apiAuth(food: food))
+        // I might use Nutritionix
+        print(food)
+        apiAuth(food: food)
+        
+        
+        /*
+         POST request to: https://trackapi.nutritionix.com/v2/natural/nutrients
+
+         In curl:
+         
+         curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'x-app-id: 6809025e' --header 'x-app-key: aeb52a68adf82760d6a67f2b04ec6e73' --header 'x-remote-user-id: 1' -d '{
+         "query": "water",
+         "num_servings": 1,
+         "aggregate": "string",
+         "line_delimited": false,
+         "use_raw_foods": false,
+         "include_subrecipe": false,
+         "timezone": "US/Eastern",
+         "consumed_at": null,
+         "lat": null,
+         "lng": null,
+         "meal_type": 0,
+         "use_branded_foods": false,
+         "locale": "en_US"
+         }' 'https://trackapi.nutritionix.com/v2/natural/nutrients'
+         
+         
+         Parameters example: (We can just change the query to the food item!)
+         {
+             "query": food,
+             "num_servings": 1,
+             "aggregate": "string",
+             "line_delimited": false,
+             "use_raw_foods": false,
+             "include_subrecipe": false,
+             "timezone": "US/Eastern",
+             "consumed_at": null,
+             "lat": null,
+             "lng": null,
+             "meal_type": 0,
+             "use_branded_foods": false,
+             "locale": "en_US"
+         }
+         
+         App ID (x-app-id): 6809025e
+         App Key (x-app-key): aeb52a68adf82760d6a67f2b04ec6e73
+         x-remote-user-id: 1
+         
+         
+         This is an error. Account for it! "Not in database"
+         {
+         "message": "We couldn't match any of your foods",
+         "id": "a201b9ec-3a1b-4b7e-8afb-0182884a7470"
+         }
+         
+         */
         
         //After a press of the "more info" button (custom button maybe? "..." icon), go to a new view controller that shows the different stats of the food item. Make sure you can back out after. (That's the whole app probs?) If I can't do this part, just have a label that appears somewhere on the screen
         // We display the "more info" after the button was pressed at least one time. 
@@ -82,23 +138,49 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
          Last resort: Just display calories only as a label right on top of the name of the food (convenient though!)
          */
         
-        /*
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//
+//        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 //        let newViewController = storyBoard.instantiateViewController(withIdentifier: "newViewController")
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "newViewController")
-        self.present(newViewController, animated: true, completion: nil)
-        */
+//        self.present(newViewController, animated: true, completion: nil)
+        
     }
     
-    func apiAuth(food: String) -> String{
-        //The goal here is to be able to return the authenticated string in order for us to start working on the API gathering
-        let key = "144c8119d3414ea7850edf459b180d79"
-        let signature = "HMAC-SHA1"
-        let timestamp = Int(Date().timeIntervalSince1970)
-        //nonce?
-        //version - 1.0
-        print(timestamp)
-        return food
+    func apiAuth(food: String){
+        
+        let parameters = [ //This is the JSON we'll be passing over.
+            "query": food,
+            "num_servings": 1,
+            "aggregate": "string",
+            "line_delimited": false,
+            "use_raw_foods": false,
+            "include_subrecipe": false,
+            "timezone": "US/Eastern",
+            "consumed_at": nil,
+            "lat": nil,
+            "lng": nil,
+            "meal_type": 0,
+            "use_branded_foods": false,
+            "locale": "en_US"
+            ] as [String : Any?]
+
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "x-app-id": "6809025e",
+            "x-app-key": "aeb52a68adf82760d6a67f2b04ec6e73",
+            "x-remote-user-id": "1"
+            ]
+        
+        
+        Alamofire.request("https://trackapi.nutritionix.com/v2/natural/nutrients", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            print(response) //Response is correctly in there! We can now parse this.
+            
+            //JSON parsing here
+            
+            
+        }
+        
+        
     }
     
     override func viewDidLoad() {

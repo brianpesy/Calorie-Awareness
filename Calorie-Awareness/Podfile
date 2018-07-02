@@ -9,6 +9,7 @@ target 'Calorie-Awareness' do
 
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'SVProgressHUD'
 
   target 'Calorie-AwarenessTests' do
     inherit! :search_paths

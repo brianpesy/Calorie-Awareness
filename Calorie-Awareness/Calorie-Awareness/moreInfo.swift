@@ -12,7 +12,11 @@ class moreInfo{
 //    @IBAction func doneButton(_ sender: Any) {
 //        print("hi")
 //    }
-    @IBAction func buttonPress(_ sender: Any) {
+//    @IBAction func buttonPress(_ sender: Any) {
+//        print("hi")
+//    }
+
+    @IBAction func elo(_ sender: Any) {
         print("hi")
     }
     
