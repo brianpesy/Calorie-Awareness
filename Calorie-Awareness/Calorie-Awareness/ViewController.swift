@@ -6,7 +6,7 @@
 //  Copyright © 2018 BrianSy. All rights reserved.
 //
 
-//Resource for integration: https://medium.freecodecamp.org/ios-coreml-vision-image-recognition-3619cf319d0b
+//Resource for integrating with the camera: https://medium.freecodecamp.org/ios-coreml-vision-image-recognition-3619cf319d0b
 
 import UIKit
 import AVFoundation
@@ -77,17 +77,14 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     }
     
     @objc private func getAction(_ sender: UIButton?) {
-//        print("helo")
         apiButton.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        //Place API get call over here. Problem: not being able to know what is a good API for nutrition :(
-        
-        //The variable "food" has the food that we want to work on here!
-        // I might use Nutritionix
-        print(food)
+
+        //Authentication and getting of the data
         apiAuth(food: food)
         
-        
         /*
+         API request notes:
+         
          POST request to: https://trackapi.nutritionix.com/v2/natural/nutrients
 
          In curl:
@@ -125,10 +122,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
              "use_branded_foods": false,
              "locale": "en_US"
          }
-         
-         App ID (x-app-id): 6809025e
-         App Key (x-app-key): aeb52a68adf82760d6a67f2b04ec6e73
-         x-remote-user-id: 1
          
          
          This is an error. Account for it! "Not in database"
@@ -186,7 +179,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         SVProgressHUD.show()
         
         Alamofire.request("https://trackapi.nutritionix.com/v2/natural/nutrients", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-//            print(response) //Response is correctly in there! We can now parse this.
             
             //JSON parsing here
             
@@ -194,10 +186,9 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 let json = JSON(response.result.value!)
                 if json["message"].stringValue != "We couldn't match any of your foods" {
                     for item in json["foods"].arrayValue {
-                        //Got the calories fine! It's in this variable. If we want any other values, we can do refer to the variables and structure here as well.
                         self.calories = item["nf_calories"].intValue
                         self.weight = item["serving_weight_grams"].intValue
-                        print(self.calories)
+                        
                         self.displayCalories(calories: self.calories, weight: self.weight, food: self.food)
                     }
                 }
@@ -209,10 +200,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     }
     
     func displayCalories(calories: Int, weight: Int, food: String){
-//        let calLabel = UILabel(frame: CGRect(x: 10, y: 50, width: 230, height: 21))
-//        calLabel.textAlignment = .center //For center alignment
         calorieLabel.text = "\(food): \(calories)kcal per \(weight)g"
-//        calLabel.textColor = .white
         view.addSubview(calorieLabel)
         setupCalorieLabel()
 
@@ -227,8 +215,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         createButton()
         view.addSubview(apiButton)
         setupLabel()
-//        view.addSubview(calorieLabel)
-//        setupCalorieLabel()
     }
 
     override func didReceiveMemoryWarning() {
@@ -310,6 +296,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     func setupCalorieLabel(){
         calorieLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
         calorieLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive = true
     }
 
