@@ -16,9 +16,9 @@ class moreInfo{
 //        print("hi")
 //    }
 
-    @IBAction func elo(_ sender: Any) {
-        print("hi")
-    }
+//    @IBAction func elo(_ sender: Any) {
+//        print("hi")
+//    }
     
     
 }

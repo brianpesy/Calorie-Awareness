@@ -15,10 +15,12 @@ import CoreML
 import Alamofire
 import SwiftyJSON
 import SVProgressHUD
+import Reachability
+
 
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
-
+    
     //Creating a label
     let label: UILabel = {
         let label = UILabel()
@@ -45,9 +47,22 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     var weight = 0
 
     
+    
     //1. Creating a button. We can use this button to get the API whenever the user wants. It will be good to regulate the checks this way! PROBLEM: Finding a good API for nutrition :(
     //2. Another problem: Inaccurate readings on what food was scanned as well (possibly unavoidable?) 
 
+    /**
+     Displays alert over passed view controller with title, message and buttons. - Parameters:
+     - inController: InController over which the alert is presented. Should use self, or provide view controller name.
+     - title: Title of the alert
+     - message: Main message presented in the alert
+     - userAction: UserAction optional parameter, it invoked when user tap on particular button in
+     alert.
+     ## Usage Example: ## ````
+     Alert.showAlertView(inController: presentingViewController, title: "Title of the Alert", message: "Main message presented in the alert")
+     ````
+     **Note :** If you wants to handle user tap action then you must be use userAction parameter */
+    
     private func createButton() {
 
         //A button that spans the whole bottom of the screen
@@ -132,8 +147,31 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
          
          */
 
+        
+        //After a press of the "more info" button (custom button maybe? "..." icon), go to a new view controller that shows the different stats of the food item. Make sure you can back out after. (That's the whole app probs?) If I can't do this part, just have a label that appears somewhere on the screen
+        // We display the "more info" after the button was pressed at least one time.
+        //Nav bar on top, shows everything. Back up after! Now... to research on that...
+        
+        /*
+         Option 1: Create a custom button and then display the data in a navigation bar (will need to pass variables through a segue)
+         Option 2: Create a slide out menu where we can see the data from without leaving
+         Option 3:
+         Last resort: Just display calories only as a label right on top of the name of the food (convenient though!)
+         */
+        
+        //
+        //        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        //        let newViewController = storyBoard.instantiateViewController(withIdentifier: "newViewController")
+        //        self.present(newViewController, animated: true, completion: nil)
+        
+        
     }
     
+    /**
+        Authentication of the food API is done within here.
+     
+        Feed in your food as its parameter
+     */
     func apiAuth(food: String){
         
         let parameters = [ //This is the JSON we'll be passing over.
@@ -152,6 +190,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             "locale": "en_US"
             ] as [String : Any?]
 
+        //API keys can be stored using key store
+        
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
             "Accept": "application/json",
@@ -176,6 +216,24 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                         self.displayCalories(calories: self.calories, weight: self.weight, food: self.food)
                     }
                 }
+            }
+            
+            if((response.result.value) == nil){
+                let alert = UIAlertController(title: "No Internet Connection", message: "Please provide a connection before trying again", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    switch action.style{
+                    case .default:
+                        print("default")
+                        
+                    case .cancel:
+                        print("cancel")
+                        
+                    case .destructive:
+                        print("destructive")
+                        
+                        
+                    }}))
+                self.present(alert, animated: true, completion: nil)
             }
             
             //Progress bar end here

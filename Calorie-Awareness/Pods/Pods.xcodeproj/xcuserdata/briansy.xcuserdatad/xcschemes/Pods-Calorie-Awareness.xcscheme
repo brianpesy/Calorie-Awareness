@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7CE658691BB066A0B6785517C9C9D8D4"
+               BlueprintIdentifier = "13A9F9ADB9311721FC0D92AC0D5AD303"
                BuildableName = "Pods_Calorie_Awareness.framework"
                BlueprintName = "Pods-Calorie-Awareness"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7CE658691BB066A0B6785517C9C9D8D4"
+            BlueprintIdentifier = "13A9F9ADB9311721FC0D92AC0D5AD303"
             BuildableName = "Pods_Calorie_Awareness.framework"
             BlueprintName = "Pods-Calorie-Awareness"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='Calorie-AwarenessTests.xctest' tests='3' failures='0'>
+  <testsuite name='Calorie_AwarenessUITests.Calorie_AwarenessUITests' tests='1' failures='0'>
+    <testcase classname='Calorie_AwarenessUITests.Calorie_AwarenessUITests' name='testExample' time='8.536'/>
+  </testsuite>
+  <testsuite name='Calorie_AwarenessTests.Calorie_AwarenessTests' tests='2' failures='0'>
+    <testcase classname='Calorie_AwarenessTests.Calorie_AwarenessTests' name='testExample' time='0.001'/>
+    <testcase classname='Calorie_AwarenessTests.Calorie_AwarenessTests' name='testPerformanceExample' time='0.351'/>
+  </testsuite>
+</testsuites>

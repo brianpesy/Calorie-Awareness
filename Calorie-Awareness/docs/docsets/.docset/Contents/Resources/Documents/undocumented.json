@@ -1,0 +1,215 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/AppDelegate.swift",
+      "line": 12,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/AppDelegate.swift",
+      "line": 14,
+      "symbol": "AppDelegate.window",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/AppDelegate.swift",
+      "line": 17,
+      "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/AppDelegate.swift",
+      "line": 29,
+      "symbol": "AppDelegate.applicationWillResignActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/AppDelegate.swift",
+      "line": 34,
+      "symbol": "AppDelegate.applicationDidEnterBackground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/AppDelegate.swift",
+      "line": 39,
+      "symbol": "AppDelegate.applicationWillEnterForeground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/AppDelegate.swift",
+      "line": 43,
+      "symbol": "AppDelegate.applicationDidBecomeActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/AppDelegate.swift",
+      "line": 47,
+      "symbol": "AppDelegate.applicationWillTerminate(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/ViewController.swift",
+      "line": 20,
+      "symbol": "ViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/ViewController.swift",
+      "line": 23,
+      "symbol": "ViewController.label",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/ViewController.swift",
+      "line": 33,
+      "symbol": "ViewController.calorieLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/ViewController.swift",
+      "line": 42,
+      "symbol": "ViewController.apiButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/ViewController.swift",
+      "line": 43,
+      "symbol": "ViewController.food",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/ViewController.swift",
+      "line": 44,
+      "symbol": "ViewController.calories",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/ViewController.swift",
+      "line": 45,
+      "symbol": "ViewController.weight",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/ViewController.swift",
+      "line": 221,
+      "symbol": "ViewController.displayCalories(calories:weight:food:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/ViewController.swift",
+      "line": 228,
+      "symbol": "ViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/ViewController.swift",
+      "line": 239,
+      "symbol": "ViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/ViewController.swift",
+      "line": 244,
+      "symbol": "ViewController.setupCaptureSession()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/ViewController.swift",
+      "line": 273,
+      "symbol": "ViewController.captureOutput(_:didOutput:from:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/ViewController.swift",
+      "line": 306,
+      "symbol": "ViewController.setupLabel()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/ViewController.swift",
+      "line": 316,
+      "symbol": "ViewController.setupCalorieLabel()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/moreInfo.swift",
+      "line": 11,
+      "symbol": "moreInfo",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/build/Calorie-Awareness.build/Release-iphoneos/Calorie-Awareness.build/DerivedSources/CoreMLGenerated/Food101/Food101.swift",
+      "line": 17,
+      "symbol": "Food101Input.featureNames",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/build/Calorie-Awareness.build/Release-iphoneos/Calorie-Awareness.build/DerivedSources/CoreMLGenerated/Food101/Food101.swift",
+      "line": 23,
+      "symbol": "Food101Input.featureValue(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/build/Calorie-Awareness.build/Release-iphoneos/Calorie-Awareness.build/DerivedSources/CoreMLGenerated/Food101/Food101.swift",
+      "line": 30,
+      "symbol": "Food101Input.init(image:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/build/Calorie-Awareness.build/Release-iphoneos/Calorie-Awareness.build/DerivedSources/CoreMLGenerated/Food101/Food101.swift",
+      "line": 46,
+      "symbol": "Food101Output.featureNames",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/build/Calorie-Awareness.build/Release-iphoneos/Calorie-Awareness.build/DerivedSources/CoreMLGenerated/Food101/Food101.swift",
+      "line": 52,
+      "symbol": "Food101Output.featureValue(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/build/Calorie-Awareness.build/Release-iphoneos/Calorie-Awareness.build/DerivedSources/CoreMLGenerated/Food101/Food101.swift",
+      "line": 62,
+      "symbol": "Food101Output.init(foodConfidence:classLabel:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness/build/Calorie-Awareness.build/Release-iphoneos/Calorie-Awareness.build/DerivedSources/CoreMLGenerated/Food101/Food101.swift",
+      "line": 72,
+      "symbol": "Food101.model",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/briansy/Desktop/Work/Stratpoint/OJT/Calorie-Awareness/Calorie-Awareness/Calorie-Awareness"
+}
